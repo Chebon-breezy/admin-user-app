@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Photo;
+use App\Models\Hire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PhotoController extends Controller
 {
@@ -57,7 +59,17 @@ class PhotoController extends Controller
 
     public function hire(Photo $photo)
     {
-        // Implement hire logic here
+        // Check if the user is authenticated
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'You need to log in to hire.');
+        }
+
+        // Create the hire request
+        Hire::create([
+            'photo_id' => $photo->id,
+            'user_id' => Auth::id(),
+        ]);
+
         return redirect()->route('photos.show')->with('success', 'Photo hired successfully.');
     }
 }

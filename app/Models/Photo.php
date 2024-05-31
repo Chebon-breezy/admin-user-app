@@ -16,4 +16,9 @@ class Photo extends Model
         'location',
         'profession',
     ];
+
+    public function hires()
+    {
+        return $this->hasMany(Hire::class);
+    }
 }

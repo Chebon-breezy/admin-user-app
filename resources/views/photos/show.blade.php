@@ -3,6 +3,18 @@
 @section('content')
 <div class="container">
     <h1>Available Photos</h1>
+
+    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+    @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
+
     <div class="row">
         @foreach($photos as $photo)
         <div class="col-md-4">
