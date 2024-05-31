@@ -9,12 +9,18 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
-                    <h2>You are a User.</h2>
+                    <!-- Removed the "You are a User" message -->
+
+                    <!-- Added links to user photos -->
+                    <ul>
+                        <li><a href="{{ route('photos.show') }}">View Photos</a></li>
+
+                    </ul>
                 </div>
             </div>
         </div>

@@ -9,12 +9,18 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
-                    <h2>You are a Admin User.</h2>
+                    <!-- Removed the "You are an Admin User" message -->
+
+                    <!-- Added links to admin photos -->
+                    <ul>
+                        <li><a href="{{ route('photos.index') }}">View Photos</a></li>
+                        <li><a href="{{ route('photos.create') }}">Upload Photo</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
