@@ -7,24 +7,24 @@
     <table class="table mt-4">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Image</th>
+                <th>Full Name</th>
                 <th>Age</th>
-                <th>Location</th>
-                <th>Profession</th>
+                <th>Type of Job Wanted</th>
+                <th>Availability</th>
+                <th>Expected Salary</th>
+                <th>Image</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach($photos as $photo)
             <tr>
-                <td>{{ $photo->title }}</td>
-                <td>{{ $photo->description }}</td>
-                <td><img src="{{ asset('storage/' . $photo->image_path) }}" alt="{{ $photo->title }}" width="100"></td>
+                <td>{{ $photo->full_name }}</td>
                 <td>{{ $photo->age }}</td>
-                <td>{{ $photo->location }}</td>
-                <td>{{ $photo->profession }}</td>
+                <td>{{ $photo->job_type }}</td>
+                <td>{{ $photo->availability }}</td>
+                <td>{{ $photo->expected_salary }}</td>
+                <td><img src="{{ asset('storage/' . $photo->image_path) }}" alt="{{ $photo->full_name }}" width="100"></td>
                 <td>
                     <form action="{{ route('photos.destroy', $photo) }}" method="POST">
                         @csrf

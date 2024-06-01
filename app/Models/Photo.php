@@ -9,12 +9,12 @@ class Photo extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title',
-        'description',
-        'image_path',
+        'full_name',
         'age',
-        'location',
-        'profession',
+        'job_type',
+        'availability',
+        'expected_salary',
+        'image_path', // store the image path
     ];
 
     public function hires()

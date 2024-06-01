@@ -6,28 +6,28 @@
     <form action="{{ route('photos.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" required>
-        </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea class="form-control" id="description" name="description" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="image">Image</label>
-            <input type="file" class="form-control" id="image" name="image" required>
+            <label for="full_name">Full Name</label>
+            <input type="text" class="form-control" id="full_name" name="full_name" required>
         </div>
         <div class="form-group">
             <label for="age">Age</label>
             <input type="number" class="form-control" id="age" name="age" required>
         </div>
         <div class="form-group">
-            <label for="location">Location</label>
-            <input type="text" class="form-control" id="location" name="location" required>
+            <label for="job_type">Type of Job Wanted</label>
+            <input type="text" class="form-control" id="job_type" name="job_type" required>
         </div>
         <div class="form-group">
-            <label for="profession">Profession</label>
-            <input type="text" class="form-control" id="profession" name="profession" required>
+            <label for="availability">Availability</label>
+            <input type="text" class="form-control" id="availability" name="availability" required>
+        </div>
+        <div class="form-group">
+            <label for="expected_salary">Expected Salary</label>
+            <input type="number" class="form-control" id="expected_salary" name="expected_salary" required>
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" class="form-control" id="image" name="image" required>
         </div>
         <button type="submit" class="btn btn-primary">Upload</button>
     </form>
