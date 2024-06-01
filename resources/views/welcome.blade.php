@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ikoKazi GetHired ASAP</title>
+    <title>House help Finder</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
         }
 
         header {
-            background-color: #007bff;
+            background-color: #8b4513;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -26,7 +26,7 @@
         }
 
         nav {
-            background-color: #0056b3;
+            background-color: #d2b48c;
             padding: 10px;
             text-align: center;
         }
@@ -51,7 +51,7 @@
         section h2 {
             margin-top: 0;
             font-size: 2rem;
-            color: #007bff;
+            color: #8b4513;
         }
 
         section p {
@@ -61,7 +61,7 @@
         }
 
         section button {
-            background-color: #007bff;
+            background-color: #8b4513;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -71,7 +71,7 @@
         }
 
         section button:hover {
-            background-color: #0056b3;
+            background-color: #d2b48c;
         }
 
         footer {
@@ -83,12 +83,20 @@
             bottom: 0;
             width: 100%;
         }
+
+        .logo {
+            display: block;
+            margin: 20px auto;
+            width: 150px;
+            height: auto;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Welcome to ikoKazi GetHired ASAP</h1>
+        <h1>Welcome to House help Finder</h1>
+        <p>Utu Kwa Kazi</p>
         @if (Route::has('login'))
         <nav class="-mx-3 flex flex-1 justify-end">
             @auth
@@ -103,19 +111,17 @@
         </nav>
         @endif
     </header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Jobs</a>
-        <a href="#">Contact</a>
-    </nav>
     <section>
-        <h2>Find Your Dream Job Today!</h2>
-        <p>Join thousands of job seekers who have found success with ikoKazi GetHired ASAP.</p>
-        <button>Get Started</button>
+        <img src="{{ asset('public/log1') }}" alt="House help Finder Logo" class="logo">
+        <h2>The solution for all your casual employees needs.</h2>
+        <p>Contact us at: <a href="mailto:househelpfinder10@gmail.com">househelpfinder10@gmail.com</a></p>
+        <p>Telephone number: 0790680702</p>
+        <p>Facebook: <a href="https://facebook.com/Househelpfinder.co.ke" target="_blank">House help finder.co.ke</a></p>
+        <p>Instagram: <a href="https://instagram.com/househelpfinder.co.ke" target="_blank">@househelpfinder.co.ke</a></p>
+        <p>Twitter: <a href="https://twitter.com/househelpfinder.co.ke" target="_blank">@househelpfinder.co.ke</a></p>
     </section>
     <footer>
-        <p>&copy; 2024 ikoKazi GetHired ASAP. All rights reserved.</p>
+        <p>&copy; 2024 House help Finder. All rights reserved.</p>
     </footer>
 </body>
 
