@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('image_path');
+            $table->string('full_name');
             $table->integer('age');
-            $table->string('location');
-            $table->string('profession');
+            $table->string('job_type');
+            $table->string('availability');
+            $table->integer('expected_salary');
+            $table->string('image_path'); // to store the path of the uploaded image
             $table->timestamps();
         });
     }

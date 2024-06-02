@@ -38,6 +38,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/photos/create', [PhotoController::class, 'create'])->name('photos.create');
     Route::post('/admin/photos', [PhotoController::class, 'store'])->name('photos.store');
     Route::delete('/admin/photos/{photo}', [PhotoController::class, 'destroy'])->name('photos.destroy');
+    Route::get('/admin/photos/hired', [PhotoController::class, 'showHired'])->name('photos.hired');
 });
 
 

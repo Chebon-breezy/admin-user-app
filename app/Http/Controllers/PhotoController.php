@@ -23,26 +23,27 @@ class PhotoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'image' => 'required|image',
+            'full_name' => 'required|string|max:255',
             'age' => 'required|integer',
-            'location' => 'required',
-            'profession' => 'required',
+            'job_type' => 'required|string|max:255',
+            'availability' => 'required|string|max:255',
+            'expected_salary' => 'required|integer',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $imagePath = $request->file('image')->store('photos', 'public');
+        $imagePath = $request->file('image')->store('images', 'public');
 
         Photo::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'image_path' => $imagePath,
+            'full_name' => $request->full_name,
             'age' => $request->age,
-            'location' => $request->location,
-            'profession' => $request->profession,
+            'job_type' => $request->job_type,
+            'availability' => $request->availability,
+            'expected_salary' => $request->expected_salary,
+            'image_path' => $imagePath,
         ]);
 
-        return redirect()->route('photos.index')->with('success', 'Photo uploaded successfully.');
+        return redirect()->route('photos.index')
+            ->with('success', 'Photo added successfully.');
     }
 
     public function destroy(Photo $photo)
@@ -71,5 +72,11 @@ class PhotoController extends Controller
         ]);
 
         return redirect()->route('photos.show')->with('success', 'Photo hired successfully.');
+    }
+
+    public function showHired()
+    {
+        $hires = Hire::with(['user', 'photo'])->get();
+        return view('admin.photos.hired', compact('hires'));
     }
 }

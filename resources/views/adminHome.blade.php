@@ -14,12 +14,11 @@
                     </div>
                     @endif
 
-                    <!-- Removed the "You are an Admin User" message -->
-
-                    <!-- Added links to admin photos -->
+                    <!-- Links to admin photos and hires -->
                     <ul>
                         <li><a href="{{ route('photos.index') }}">View Photos</a></li>
                         <li><a href="{{ route('photos.create') }}">Upload Photo</a></li>
+                        <li><a href="{{ route('photos.hired') }}">View Hires</a></li> <!-- Added this line -->
                     </ul>
                 </div>
             </div>
