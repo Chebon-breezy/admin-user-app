@@ -58,6 +58,28 @@ class PhotoController extends Controller
         return view('photos.show', compact('photos'));
     }
 
+    // public function hire(Photo $photo)
+    // {
+    //     // Check if the user is authenticated
+    //     if (!Auth::check()) {
+    //         return redirect()->route('login')->with('error', 'You need to log in to hire.');
+    //     }
+
+    //     // Create the hire request
+    //     Hire::create([
+    //         'photo_id' => $photo->id,
+    //         'user_id' => Auth::id(),
+    //     ]);
+
+    //     return redirect()->route('photos.show')->with('success', 'Photo hired successfully.');
+    // }
+
+    public function showHired()
+    {
+        $hires = Hire::with(['user', 'photo'])->get();
+        return view('admin.photos.hired', compact('hires'));
+    }
+
     public function hire(Photo $photo)
     {
         // Check if the user is authenticated
@@ -71,12 +93,10 @@ class PhotoController extends Controller
             'user_id' => Auth::id(),
         ]);
 
-        return redirect()->route('photos.show')->with('success', 'Photo hired successfully.');
-    }
+        // Delete the photo
+        $photo->delete();
 
-    public function showHired()
-    {
-        $hires = Hire::with(['user', 'photo'])->get();
-        return view('admin.photos.hired', compact('hires'));
+        // Redirect to the pay page with success message
+        return redirect()->route('photos.pay')->with('success', 'Photo hired successfully. Please complete the payment.');
     }
 }
