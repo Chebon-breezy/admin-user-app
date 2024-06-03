@@ -18,7 +18,7 @@
                     <ul>
                         <li><a href="{{ route('photos.index') }}">View Photos</a></li>
                         <li><a href="{{ route('photos.create') }}">Upload Photo</a></li>
-                        <li><a href="{{ route('photos.hired') }}">View Hires</a></li> <!-- Added this line -->
+                        <li><a href="{{ route('photos.payments') }}">View Payments</a></li> <!-- Added this line -->
                     </ul>
                 </div>
             </div>

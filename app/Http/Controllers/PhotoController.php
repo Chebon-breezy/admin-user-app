@@ -74,10 +74,10 @@ class PhotoController extends Controller
     //     return redirect()->route('photos.show')->with('success', 'Photo hired successfully.');
     // }
 
-    public function showHired()
+    public function showPayments()
     {
-        $hires = Hire::with(['user', 'photo'])->get();
-        return view('admin.photos.hired', compact('hires'));
+        $payments = \App\Models\Payment::all();
+        return view('admin.photos.payments', compact('payments'));
     }
 
     public function hire(Photo $photo)
