@@ -33,7 +33,7 @@ class PhotoController extends Controller
 
         $imagePath = $request->file('image')->store('images', 'public');
 
-        Photo::create([
+        $photo = Photo::create([
             'full_name' => $request->full_name,
             'age' => $request->age,
             'job_type' => $request->job_type,
@@ -45,6 +45,7 @@ class PhotoController extends Controller
         return redirect()->route('photos.index')
             ->with('success', 'Photo added successfully.');
     }
+
 
     public function destroy(Photo $photo)
     {
