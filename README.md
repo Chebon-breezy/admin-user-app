@@ -11,7 +11,7 @@ This project aims to simplify the process of finding reliable house help. It add
 
 ## Quick Start
 1. Clone the repository
-   git clone [https://github.com/Chebon-breezy/admin-user-app]
+   git clone https://github.com/Chebon-breezy/admin-user-app
 2. Install dependencies                                                                                                                                                    composer install
    npm install
 3. Set up your environment file                                                                                                                                            cp .env.example .env
